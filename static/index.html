@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+	<head>
+  		<link rel="stylesheet" href="my.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+<body>
+
+<div class="container">
+	<script language="JavaScript" type="text/javascript" src="https://embed.twitch.tv/embed/v1.js"></script>
+  	<h1> Set your streamer name </h1>
+  	<h2> You would be authenticated if you need to chat or subscribe or need to follow the twitch user with your twitch account </h2>
+  	<h3> If the entered user doesn't exist the playback won't start </h3>
+  	<div id="streamers" class="row">
+    	<div class="add"><input type="text" placeholder="Add user"><i class="fa fa-plus-circle"></i></div>
+  	</div>
+   	<div id="twitch-embed"></div>
+    <script type="text/javascript">
+		$(document).ready(function() {
+  			var users = [];
+  			$(".fa-plus-circle").on("click", function() {
+    		var add = $("input").val();
+    		if (add === "") alert("Enter a username");
+    			users.push(add);
+				console.log(users);
+    			$(".user").remove();
+				putDetail1(users);
+  			}); //button click to add new steamers. Will reset on refresh
+
+  			$("input").keyup(function(enter) {
+    			if (enter.keyCode == 13) {
+      			$(".fa-plus-circle").click();
+    		}
+  		}); //to add with enter
+		function putDetail1(users) {
+    		console.log(users);
+    		if(users.length > 1){
+				alert("Only one user is allowed for the demo");
+        	return;
+		}
+     	 new Twitch.Embed("twitch-embed", {
+        	width: 854,
+        	height: 480,
+        	channel: users,
+      	});
+      	embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        	var player = embed.getPlayer();
+        	player.play();
+      });
+	}
+}); //document ready ends
+    </script>
+   </div>
+</body>
+</html>
+
+
