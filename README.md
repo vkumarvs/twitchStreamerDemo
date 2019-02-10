@@ -34,4 +34,6 @@ Deployment instructions:
 2. You need to have aws cli configured with your  account credentials to access AWS.
 
 
-Improved architecture Diagram:
+Improvement using cloudfront (Current code only use S3):
+![alt text](https://github.com/vkumarvs/twitchStreamerDemo/blob/master/Using_CloudFront_withS3.png)
+
