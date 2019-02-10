@@ -2,7 +2,7 @@
 
 Overview:
 
-1. This demo is deployed on AWS using S3 static web hostinag in Ireland region.
+1. This demo is deployed on AWS using S3 static web hosting in Ireland region.
 2. Resources were deployed using serverless framework that uses Cloudformation stack to deploy this.
 3. I am using "Twitch Embed Everything SDK" to fetch my favorite streamer's feed
    where, authentication would be performaed using twitch API.
@@ -32,3 +32,6 @@ would  cost around  $1200 per month.
 Deployment instructions:
 1. To deploy this demo , you need to make sure that all the serverless modules are installed (mentioned in serverless.yml)
 2. You need to have aws cli configured with your  account credentials to access AWS.
+
+
+Improved architecture Diagram:
